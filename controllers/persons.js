@@ -1,39 +1,93 @@
-import { v4 as uuidv4 } from 'uuid';
+import pool from '../db.js';
+import { queries } from '../queries.js';
 
-let persons = [];
-
-export const createPerson = (req, res) => {
-    const newPerson = req.body;
-    const newPersonWithId = { ...newPerson, id: uuidv4() };
-    persons.push(newPersonWithId);
-    res.status(201).send(`Person with name ${newPersonWithId.name} successfully created!`);
-}
-
-export const getAllPersons = (req, res) => {
-    res.send(persons);
+export const getPersons = (req, res) => {
+    pool.query(
+        queries.getPersonsQuery,
+        (error, results) => {
+            if (error) throw error;
+            res.status(200).send(results.rows);
+        }
+    );
 }
 
 export const getPersonById = (req, res) => {
-    const { id } = req.params;
-    const foundPerson = persons.find((person) => person.id === id);
-    res.send(foundPerson);
+    const idToGet = parseInt(req.params.id);
+    pool.query(
+        queries.getPersonByIdQuery,
+        [idToGet],
+        (error, results) => {
+            if (error) throw error;
+            res.status(200).send(results.rows);
+        }
+    );
+}
+
+export const createPerson = (req, res) => {
+    const newPerson = req.body;
+    pool.query(
+        queries.createPersonQuery,
+        [newPerson.fullname, newPerson.age, newPerson.address],
+        (error, results) => {
+            if (error) throw error;
+            console.log(results);
+            res.status(201).send(`Person named '${newPerson.fullname}' successfully created!`);
+        }
+    );
+
+    // persons.push(newPersonWithId);
+    // res.status(201).send(`Person with name ${newPersonWithId.name} successfully created!`);
 }
 
 export const updatePersonById = (req, res) => {
-    const { id } = req.params;
-    const { name, age, address } = req.body;
+    const idToUpdate = parseInt(req.params.id);
+    const { fullname, age, address } = req.body;
 
-    let personToUpdate = persons.find((person) => person.id === id);
+    if (fullname) {
+        pool.query(
+            queries.updatePersonByIdQueries.fullname,
+            [fullname, idToUpdate],
+            (error, results) => {
+                if (error) throw error;
+            }
+        );
+    }
 
-    if (name) personToUpdate.name = name;
-    if (age) personToUpdate.age = age;
-    if (address) personToUpdate.address = address;
+    if (age) {
+        pool.query(
+            queries.updatePersonByIdQueries.age,
+            [age, idToUpdate],
+            (error, results) => {
+                if (error) throw error;
+            }
+        );
+    }
 
-    res.send(`Person with ID ${id} successfully updated!`);
-}
+    if (address) {
+        pool.query(
+            queries.updatePersonByIdQueries.address,
+            [address, idToUpdate],
+            (error, results) => {
+                if (error) throw error;
+            }
+        );
+    }
+
+    res.status(200).send(`Person with ID ${idToUpdate} successfully updated!`);
+
+    // res.send(`Person with ID ${id} successfully updated!`);
+
+};
 
 export const deletePersonById = (req, res) => {
+    const idToDelete = parseInt(req.params.id);
     const { id } = req.params;
-    persons = persons.filter((person) => person.id !== id);
-    res.send(`Person with ID ${id} successfully deleted!`);
+    pool.query(
+        queries.deletePersonByIdQuery,
+        [idToDelete],
+        (error, results) => {
+            if (error) throw error;
+        }
+    );
+    res.send(`Person with ID ${idToDelete} successfully deleted!`);
 }
