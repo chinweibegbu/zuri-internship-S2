@@ -25,4 +25,4 @@ app.get('/', (req, res) => {
 
 
 // Running the Express server
-app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running at: https://zuri-chinwe-stage2.onrender.com`));
