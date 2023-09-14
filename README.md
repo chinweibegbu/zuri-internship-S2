@@ -9,4 +9,4 @@ Resources used:
 5. Getting variable name: https://stackoverflow.com/questions/4602141/variable-name-as-a-string-in-javascript
 6. forEach() for objects: https://masteringjs.io/tutorials/fundamentals/foreach-object
 7. HTTP status codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#successful_responses
-8. Hosting PostgreSQL DB on Render: https://community.render.com/t/connect-render-to-pgadmin4/7470/2
+8. Hosting PostgreSQL DB on Render: https://community.render.com/t/connect-render-to-pgadmin4/7470/2 and https://github.com/knex/knex/issues/5161
