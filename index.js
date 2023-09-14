@@ -10,7 +10,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Initialising the Express port
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 3001;
 
 // Iniitialising JSON data format use
 app.use(bodyParser.json());
@@ -25,4 +25,4 @@ app.get('/', (req, res) => {
 
 
 // Running the Express server
-app.listen(PORT, () => console.log(`Server running at: https://zuri-chinwe-stage2.onrender.com`));
+app.listen(PORT, () => console.log(`Server running at: https://zuri-chinwe-stage2.onrender.com on port ${PORT}`));
