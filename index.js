@@ -2,7 +2,7 @@ import express from 'express';
 import path, {dirname} from 'path';
 import { fileURLToPath } from 'url';
 import bodyParser from 'body-parser';
-import personRoutes from './routes/person.js';
+import router from './routes/person.js';
 
 // File routing setup
 // NOTE: __dirname cannot be directly used in ES6 modules
@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.json());
 
 // Setting the starting path for all the paths in the api.js file
-app.use('/api', personRoutes);
+app.use('/api', router);
 
 // Returning landing page on GET '/' request
 app.get('/', (req, res) => {
