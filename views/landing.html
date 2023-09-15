@@ -22,6 +22,13 @@
             justify-content: center;
         }
 
+        .api-image {
+            width: 50%;
+            max-width: 400px;
+            padding: 5px;
+            border: solid 1px black;
+        }
+
         #Bottom-Border {
             height: 10%;
         }
@@ -31,17 +38,31 @@
             margin: 0%;
             padding: 0%;
         }
+
+        figcaption {
+            font-size: smaller;
+            font-style: italic;
+            color: darkgray;
+        }
     </style>
 </head>
 
 <body>
     <div class="App">
-        <h1>Zuri HNG 2023 Internship</h1>
-        <h2>Stage 2 Task</h2>
-        <p>Visit <a href="https://zuri-chinwe-stage2.onrender.com/api">this public
-                URL</a>
-            to use my API</p>
-        <div id="Bottom-Border"></div>
+        <div>
+            <h1>Zuri HNG 2023 Internship</h1>
+            <h2>Stage 2 Task</h2>
+            <div id="Bottom-Border"></div>
+            <figure>
+                <img class="api-image" src="../images/API Endpoints.png" />
+                <figcaption>Fig.1 - API Endpoints and Functions</figcaption>
+            </figure>
+            <p>See the
+                <a href="https://documenter.getpostman.com/view/18067684/2s9YC5zYYD">API documentation</a>
+                on Postman
+            </p>
+            <div id="Bottom-Border"></div>
+        </div>
     </div>
 </body>
 
