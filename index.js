@@ -25,4 +25,5 @@ app.get('/', (req, res) => {
 
 
 // Running the Express server
-app.listen(PORT, () => console.log(`Server running at: https://zuri-chinwe-stage2.onrender.com on port ${PORT}`));
+const appLink = PORT === 10000 ? "https://zuri-chinwe-stage2.onrender.com" : "http://localhost" ;
+app.listen(PORT, () => console.log(`Server running at: ${appLink} on port ${PORT}`));
