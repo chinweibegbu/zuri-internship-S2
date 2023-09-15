@@ -4,10 +4,8 @@
 ### Task Description
 This is a REST API with basic CRUD operations on a resource called "Person".
 
-<figure style="text-align:center; font-style:italic; font-size:smaller">
-    <img src="./images/UML%20Entity-Relationship%20Diagram%20(ERD).png">
-    <figcaption>Fig.1 - Entiry-Relationship Diagram (ERD)</figcaption>
-</figure>
+<img style="text-align: center" src="./images/UML%20Entity-Relationship%20Diagram%20(ERD).png">
+<p align=center>Fig. 1: API Resource Entity-Relationship Diagram (ERD)</p>
 
 ### Technologies Used
 *API development*:
