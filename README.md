@@ -21,8 +21,9 @@ This is a REST API with basic CRUD operations on a resource called "Person".
 [Render](https://render.com/)
 
 ## API Usage
-### API Documentation
-https://documenter.getpostman.com/view/18067684/2s9YC5zYYD
+### API Details
+API Documentation: https://documenter.getpostman.com/view/18067684/2s9YC5zYYD
+API Link: https://zuri-chinwe-stage2.onrender.com/
 
 ### API Endpoints
 | Endpoint      | HTTP Method   | Function                 |
