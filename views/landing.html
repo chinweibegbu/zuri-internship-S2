@@ -29,7 +29,15 @@
             border: solid 1px black;
         }
 
-        #Bottom-Border {
+        .table-container {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        #bottom-border {
             height: 10%;
         }
 
@@ -52,16 +60,44 @@
         <div>
             <h1>Zuri HNG 2023 Internship</h1>
             <h2>Stage 2 Task</h2>
-            <div id="Bottom-Border"></div>
-            <figure>
-                <img class="api-image" src="../images/api-endpoints.png" />
-                <figcaption>Fig.1 - API Endpoints and Functions</figcaption>
-            </figure>
+            <div id="bottom-border"></div>
+            <table class="table-container">
+                <tr>
+                    <th>Endpoint</th>
+                    <th>HTTP Method</th>
+                    <th>Function</th>
+                </tr>
+                <tr>
+                    <td><code>/api</code></td>
+                    <td><code>GET</code></td>
+                    <td>Get all <em>Person</em>s</td>
+                </tr>
+                <tr>
+                    <td><code>/api</code></td>
+                    <td><code>POST</code></td>
+                    <td>Create <em>Person</em></td>
+                </tr>
+                <tr>
+                    <td><code>/api/id</code></td>
+                    <td><code>GET</code></td>
+                    <td>Get <em>Person</em> by ID</td>
+                </tr>
+                <tr>
+                    <td><code>/api/id</code></td>
+                    <td><code>PATCH</code></td>
+                    <td>Update <em>Person</em> by ID</td>
+                </tr>
+                <tr>
+                    <td><code>/api/id</code></td>
+                    <td><code>DELETE</code></td>
+                    <td>Delete <em>Person</em> by ID</td>
+                </tr>
+            </table>
             <p>See the
                 <a href="https://documenter.getpostman.com/view/18067684/2s9YC5zYYD">API documentation</a>
                 on Postman
             </p>
-            <div id="Bottom-Border"></div>
+            <div id="bottom-border"></div>
         </div>
     </div>
 </body>
